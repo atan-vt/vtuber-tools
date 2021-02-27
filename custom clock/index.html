@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Clock</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+    <!-- Font Importing -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Base Styles -->
+    <style>
+      body {
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: 32px;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body translate="no">
+    <div id="clock"></div>
+    <div id="style-preview"></div>
+
+    <script>
+      // Parse URL Params
+      let urlParams;
+      (function () {
+        let match,
+          pl = /\+/g, // Regex for replacing addition symbol with a space
+          search = /([^&=]+)=?([^&]*)/g,
+          decode = function (s) {
+            return decodeURIComponent(s.replace(pl, " "));
+          },
+          query = window.location.search.substring(1);
+
+        urlParams = {};
+        while ((match = search.exec(query)))
+          urlParams[decode(match[1])] = decode(match[2]);
+      })();
+
+      // Get References
+      let clock = document.getElementById("clock");
+      let stylePreview = document.getElementById("style-preview");
+
+      // Setup Styles
+      let styleObject = "testing";
+      if (urlParams["theme"]) {
+        switch (urlParams["theme"]) {
+          case "dark":
+            styleObject = "color: #333333;";
+            break;
+          case "light":
+            styleObject = "color: #f2f2f2;";
+            break;
+        }
+      }
+
+      // Apply Extra Styles
+      if (urlParams["style"]) {
+        styleObject += urlParams["style"];
+      }
+
+      // Apply Styles
+      clock.setAttribute("style", styleObject);
+
+      if (urlParams["bodyStyle"])
+        document.body.setAttribute("style", urlParams["bodyStyle"]);
+
+      // stylePreview.innerText = styleObject;
+
+      // updates the clock every second
+      let c;
+      setInterval(
+        (c = function () {
+          clock.innerText = moment().format(
+            urlParams["format"] || "HH : mm . ss"
+          );
+        }),
+        1000
+      );
+      c();
+    </script>
+  </body>
+</html>
