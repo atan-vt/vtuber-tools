@@ -1,0 +1,161 @@
+/* Important Font to use */
+@import url(https://fonts.googleapis.com/css?family={font_name}:700);
+
+* {
+	box-sizing: border-box;
+}
+
+/* Make sure it fits the entire browser source size */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Static Body Styles */
+body {
+	font-weight: 700;
+	line-height: 1.5em;
+}
+
+/* Custom Body Styles */
+body {
+    font-size: {font_size}px;
+    color: {text_color};
+}
+
+/* Static Log Styles */
+#log {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+}
+
+/* Custom Log Styles */
+#log {
+	opacity: {opacity};
+	padding: {panel_padding}px;
+}
+
+/* Log Background */
+#log::before {
+  z-index: -1;
+  content: '';
+  display: block;
+  opacity: {panel_opacity};
+  background-color: {panel_bg_color};
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: {border_radius}px;
+}
+
+/* add animation to incoming lines */
+#log>div {
+  animation: {animate_in} {animation_time}s cubic-bezier(0.575, 0.290, 0.230, 1.300);
+}
+
+/* formatting for each message */
+.line {
+  transition: all {animation_time}s cubic-bezier(0.575, 0.290, 0.230, 1.300);
+  margin: {line_margin}px 0 0;
+	padding: 8px 16px;
+  background-color: {line_bg_color};
+  border-radius: {border_radius}px;
+}
+
+.meta {
+  width: {name_width}%;
+  display: inline-block;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: -6px;
+  height: calc({font_size}px + 7px);
+}
+
+.message {
+  color: {text_color};
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* fix emote positon and sizing */
+.emote, .emote img {
+	display: inline-block;
+	height: calc({font_size}px * 1.25);
+	width: calc({font_size}px * 1.25);
+	min-width: calc({font_size}px * 1.25);
+	margin-bottom: calc(-{font_size}px * 0.25);
+}
+
+.badges {
+  display: {badge_show};
+}
+
+.badge {
+    display: inline-block;
+    margin-right: 0.2em;
+    position: relative;
+    height: 1em;
+    vertical-align: middle;
+    top: -0.1em;
+}
+  
+.line.dying {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* All animation options */
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(64px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-64px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes growIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+      opacity: 1;
+    transform: scale(1);
+  }
+}

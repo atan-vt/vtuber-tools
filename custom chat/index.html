@@ -1,0 +1,18 @@
+<!-- Base Layout -->
+<div id="log" class="sl__chat__layout"></div>
+
+<!-- Chat Item -->
+<script type="text/template" id="chatlist_item">
+	<!-- Total Message Block -->
+	<div data-from="{from}" data-id="{messageId}" class="line">
+		<!-- Left Block -->
+		<span class="meta" style="color: {color}">
+			<!-- Badges Block -->
+			<span class="badges"></span>
+			<!-- Name Block -->
+			<span class="name">{from}</span>
+		</span>
+		<!-- Message -->
+		{message}
+	</div>
+</script>

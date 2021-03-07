@@ -1,0 +1,129 @@
+{
+    "animation_time": {
+        "label": "Animation Time",
+        "type": "slider",
+        "name": "",
+        "value": 0.4,
+        "max": 1,
+        "min": 0,
+        "steps": 0.1
+    },
+    "max_lines": {
+        "label": "Max Lines",
+        "type": "slider",
+        "name": "",
+        "value": 12,
+        "max": 20,
+        "min": 1,
+        "steps": 1
+    },
+    "font_size": {
+        "label": "Font Size",
+        "type": "slider",
+        "name": "",
+        "value": 18,
+        "max": 64,
+        "min": 8,
+        "steps": 1
+    },
+    "border_radius": {
+        "label": "Border Radius",
+        "type": "slider",
+        "name": "",
+        "value": 2,
+        "max": 24,
+        "min": 0,
+        "steps": 1
+    },
+    "line_margin": {
+        "label": "Line Margin",
+        "type": "slider",
+        "name": "",
+        "value": 8,
+        "max": 16,
+        "min": 0,
+        "steps": 1
+    },
+    "panel_padding": {
+        "label": "Panel Padding",
+        "type": "slider",
+        "name": "",
+        "value": 16,
+        "max": 32,
+        "min": 0,
+        "steps": 1
+    },
+    "opacity": {
+        "label": "Opacity",
+        "type": "slider",
+        "name": "",
+        "value": 1,
+        "max": 1,
+        "min": 0,
+        "steps": 0.1
+    },
+    "panel_opacity": {
+        "label": "Panel Opacity",
+        "type": "slider",
+        "name": "",
+        "value": 0,
+        "max": 1,
+        "min": 0,
+        "steps": 0.1
+    },
+    "name_width": {
+        "label": "Name Percentage",
+        "type": "slider",
+        "name": "",
+        "value": 30,
+        "max": 100,
+        "min": 0,
+        "steps": 1
+    },
+    "panel_bg_color": {
+        "label": "Panel Background Color",
+        "type": "colorpicker",
+        "value": "#333333"
+    },
+    "line_bg_color": {
+        "label": "Line Background Color",
+        "type": "colorpicker",
+        "value": "#0F0F0F"
+    },
+    "text_color": {
+        "label": "Text Color",
+        "type": "colorpicker",
+        "value": "#F2F2F2"
+    },
+    "animate_in": {
+        "label": "Animate In",
+        "type": "dropdown",
+        "options": {
+            "fadeInLeft": "Fade in Left",
+            "fadeInRight": "Fade in Right",
+            "fadeIn": "Fade in",
+            "growIn": "Grow in"
+        },
+        "value": "fadeInRight"
+    },
+    "badge_show": {
+        "label": "Badge Show",
+        "type": "dropdown",
+        "options": {
+            "auto": "Show",
+            "none": "Hide"
+        },
+        "value": "auto"
+    },
+    "font_name": {
+        "label": "Font Name",
+        "type": "dropdown",
+        "options": {
+            "Roboto": "Roboto",
+            "Roboto+Mono": "Roboto Mono",
+            "Open+Sans": "Open Sans",
+            "Noto+Sans+JP": "Noto Sans"
+        },
+        "value": "Roboto"
+    }
+}
