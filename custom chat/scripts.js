@@ -13,11 +13,11 @@ document.addEventListener("onEventReceived", function (obj) {
   var childrenCount = $("#log .line").length;
 
   // Delete all children after max lines is reached
-  if (childrenCount >= { max_lines } + 1) {
+  if (childrenCount >= {max_lines} + 1) {
     $("#log .line:first-child").addClass("dying");
     // play removal animation
     setTimeout(() => {
       $("#log .line:first-child").remove();
-    }, { animation_time } * 1000);
+    }, {animation_time} * 1000);
   }
 });
